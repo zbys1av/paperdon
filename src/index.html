@@ -141,7 +141,7 @@
           <h1 class="experts__title title">Top certified experts</h1>
           <div class="experts__card card">
             <div class="experts__profile-section">
-              <img src="images/writer-profile-pic.svg" alt="profile picture" class="expers__profile-pic">
+              <img src="images/writer-profile-pic.svg" alt="profile picture" class="experts__profile-pic">
               <div class="experts__writer-section">
                 <p class="experts__name">Prof.Liam.PHD</p>
                 <img src="images/certified.svg" alt="certified" class="experts__verified">
@@ -153,13 +153,17 @@
               </div>
               <div class="experts__stats-section">
                 <div class="experts__completed">
-                  <img src="images/shopping-bag.svg" alt="shopping bag" class="experts__icon">
-                  <p class="experts__text">Completed projects</p>
+                  <div class="experts__completed-text">
+                    <img src="images/shopping-bag.svg" alt="shopping bag" class="experts__icon">
+                    <p class="experts__text">Completed projects</p>
+                  </div>
                   <p class="experts__number">350</p>
                 </div>
                 <div class="experts__joined">
-                  <img src="images/person.svg" alt="person icon" class="experts__icon">
-                  <p class="experts__text">Joined us</p>
+                  <div class="experts__joined-text">
+                    <img src="images/person.svg" alt="person icon" class="experts__icon">
+                    <p class="experts__text">Joined us</p>
+                  </div>
                   <p class="experts__number">Sep 2018</p>
                 </div>
                 <a href="#" class="experts__btn btn">Get In Touch</a>
@@ -170,18 +174,22 @@
               <div class="experts__review-card card">
                 <div class="experts__user-info">
                   <p class="experts__user-name">user4562</p>
-                  <img src="images/rating-stars.svg" alt="5 stars" class="experts__review-stars">
-                  <p class="experts__review-points"></p>
+                  <div class="experts__user-review">
+                    <img src="images/rating-stars.svg" alt="5 stars" class="experts__review-stars">
+                    <p class="experts__review-points">5</p>
+                  </div>
                 </div>
                 <p class="experts__review-text">Thank you Kellar, she 
                   was able to complete way before the time it was due. 
                   I’m sure I’ll hire her again if needed...</p>
               </div>
-              <div class="experts__review-card card">
+              <div class="experts__review-card experts__review-card--faded card">
                 <div class="experts__user-info">
                   <p class="experts__user-name">user4562</p>
-                  <img src="images/rating-stars.svg" alt="5 stars" class="experts__review-stars">
-                  <p class="experts__review-points">5</p>
+                  <div class="experts__user-review">
+                    <img src="images/rating-stars.svg" alt="5 stars" class="experts__review-stars">
+                    <p class="experts__review-points">5</p>
+                  </div>
                 </div>
                 <p class="experts__review-text">Thank you, for the professionally 
                   written letter to the hiring manager of the department I have 
@@ -191,6 +199,7 @@
               <a href="#" class="experts__see-all">See all reviews</a>
             </div>
           </div>
+          <img class="experts__pages" src="images/pages.svg" alt="pages">
         </div>
       </div>
     </div>
