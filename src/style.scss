@@ -70,6 +70,7 @@ h1{
       width: 100%;
       align-items: center;
       border-bottom: 1px solid rgba(211, 219, 231, 0.5);
+      padding-bottom: 10px;
   }
 
   // логотип має невеличкий відступ знизу
@@ -80,7 +81,7 @@ h1{
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-right: 30px;
+      // margin-right: 30px;
       gap: 15px;
   }
 
@@ -169,6 +170,8 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   &__text-section{
@@ -202,7 +205,6 @@ h1{
     display: flex;
     gap: 8px;
     justify-content: center;
-    margin-top: 24px;
   }
 
   &__review-card{
@@ -326,9 +328,39 @@ h1{
     margin: 0;
   }
 
+  &__img{
+    width: 100%;
+  }
+
 }
 
 .experts{
+
+  &__online{
+    display: flex;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 15%;
+  }
+
+  &__left{
+    display: flex;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    margin-top: 375px;
+  }
+
+  &__right{
+    display: flex;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    margin-top: 375px;
+  }
 
   &__card{
     padding: 25px 30px;
@@ -344,6 +376,16 @@ h1{
     border-radius: 100px;
     margin: auto;
     margin-bottom: 20px;
+  }
+
+  &__title{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 130%;
+    text-align: center;
+    color: #1D293F;
+    margin-bottom: 30px;
+    margin-top: 50px;
   }
 
   &__writer-section{
@@ -397,6 +439,7 @@ h1{
     flex-direction: column;
     padding-top: 10px;
     border-top: 1px solid rgba(211, 219, 231, 0.7);
+    gap: 15px;
   }
 
   &__completed{
@@ -532,6 +575,7 @@ h1{
     display: flex;
     margin: auto;
     margin-top: 30px;
+    width: 100%;
   }
 }
 
@@ -542,6 +586,7 @@ h1{
 
   &__box{
     width: 100%;
+    padding-bottom: 15px;
   }
 
   &__main-section{
@@ -648,6 +693,7 @@ h1{
   &__card-number{
     display: flex;
     justify-content: end;
+    padding-top: 160%;
     grid-area: num;
   }
 
@@ -977,10 +1023,292 @@ h1{
     border: 1px solid rgba(211, 219, 231, 0.7);
     border-radius: 10px;
     padding: 15px;
+    //for text
     font-weight: 500;
     font-size: 20px;
     line-height: 140%;
     text-align: center;
     color: #475569;
+  }
+}
+
+.customer-care{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  gap: 50px;
+  background: #F7F8FC;
+
+  &__title{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 130%;
+    text-align: center;
+    color: #1D293F;
+    margin-bottom: 50px;
+  }
+
+  &__list-section{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 18px;
+  }
+
+  &__list{
+    margin: 0;
+  }
+
+  &__list-title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140%;
+    color: #1D293F;
+  }
+
+  &__item{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 165%;
+    color: #1D293F;
+  }
+
+  &__button{
+    width: 33%;
+    padding: 15px 30px;
+    gap: 10px;
+    background: #6AA6DA;
+    border-radius: 15px;
+    //for text insite btn
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+}
+
+.faq{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  gap: 50px;
+
+  &__title{
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 130%;
+    text-align: center;
+    color: #1D293F;
+    margin-bottom: 50px;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__card{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px 30px;
+    gap: 10px;
+    background: #F7F8FC;
+    border: 1px solid rgba(211, 219, 231, 0.7);
+    border-radius: 15px;
+
+    &--selected{
+      flex-direction: column;
+    }
+  }
+
+  &__card-top{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    &--selected{
+      display: flex;
+    }
+  }
+
+  &__question{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: #475569;
+
+    &--selected{
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      color: #6AA6DA;
+    }
+  }
+
+  &__text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 165%;
+    color: #1D293F;
+  }
+}
+
+.how-to{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 100px;
+  gap: 50px;
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__title{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 130%;
+    color: #1D293F;
+  }
+
+  &__text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 165%;
+    color: #1D293F;
+  }
+
+  &__button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    gap: 10px;
+    border: 1px solid #6AA6DA;
+    border-radius: 15px;
+    //text in the button
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    text-decoration: none;
+    color: #6AA6DA;
+    width: 33%;
+  }
+}
+
+.banner{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 50px;
+
+  &__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 45px;
+    background: #E1EDF8;
+    border-radius: 25px;
+  }
+
+  &__card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__card-title{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 130%;
+    color: #1D293F;
+  }
+
+  &__card-text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 165%;
+    color: #1D293F;
+  }
+
+
+}
+
+.footer{
+  background: #475569;
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    gap: 50px;
+  }
+
+  &__title{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+  }
+
+  &__text{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    color: #D3DBE7;
+  }
+
+  &__site-map-item{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 145%;
+    color: #C8DEFE;
+    text-decoration: none;
+  }
+
+  &__map-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+  }
+
+  &__contact{
+    display: flex;
+    flex-direction: row;
+    gap: 7.5px;
+  }
+
+  &__contact-info{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 145%;
+    color: #C8DEFE;
   }
 }
