@@ -2,3 +2,5 @@ node_modules
 /.idea/.gitignore
 /.idea/papersowl.iml
 /.idea/vcs.xml
+/.idea/paperdon.iml
+/.idea/modules.xml
