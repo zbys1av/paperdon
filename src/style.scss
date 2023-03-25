@@ -11,11 +11,20 @@ html {
 
 body {
   margin: 0;
+
+  @media (min-width: 980px) {
+    margin: auto;
+  }
 }
 
 .container {
   max-width: 100%;
   padding: 10px 25px;
+
+  @media (min-width: 980px) {
+    max-width: 1310px;
+    margin: auto;
+  }
 }
 
 img {
@@ -38,6 +47,10 @@ img {
   font-size: 34px;
   line-height: 130%;
   color: #1D293F;
+
+  @media (min-width: 580px) {
+    font-size: 44px;
+  }
 }
 
 .btn {
@@ -70,6 +83,46 @@ h2 {
   font-size: 16px;
 }
 
+h3 {
+  margin: 0;
+}
+
+ul{
+  margin: 0;
+}
+
+.burger {
+  width: 25px;
+  @media (min-width: 980px) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    font-size: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    margin-bottom: 9px;
+
+  }
+
+  &.open {
+    span {
+      transform: rotate(45deg);
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        margin-top: -22px;
+      }
+    }
+  }
+}
+
 .header {
 
   &__box {
@@ -82,25 +135,74 @@ h2 {
     padding-bottom: 10px;
   }
 
-  // логотип має невеличкий відступ знизу
   &__logo {
+  }
+
+  &__list{
+    display: none;
+    list-style: none;
+    @media (min-width: 920px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+      padding-right: 35px;
+    }
+  }
+
+  &__list a{
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #475569;
   }
 
   &__buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
-    // margin-right: 30px;
     gap: 15px;
   }
 
-  &__log-in-btn {
+  &__login{
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
     text-align: center;
     color: #475569;
     text-decoration: none;
+    @media (min-width: 580px) {
+      display: none;
+    }
+    
+    &--extended{
+      display: none;
+      @media (min-width: 580px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 25px;
+        gap: 10px;
+        border: 1px solid #D3DBE7;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  &__hire{
+    
+    @media (min-width: 580px) {
+      display: none;
+    }
+
+    &--extended{
+      display: none;
+      @media (min-width: 580px) {
+        display: flex;
+      }
+    }
   }
 
 }
@@ -108,10 +210,44 @@ h2 {
 .first-screen {
 
   &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     padding-bottom: 60px;
+
+    @media (min-width: 580px) {
+      gap: 40px;
+    }
+
+    @media (min-width: 980px) {
+      display: grid;
+      grid-template: 
+        "text text text img img"
+        "text text text img img"
+        "form form form img img";
+    }
   }
 
-  &__form {
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (min-width: 580px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @media (min-width: 980px) {
+      grid-area: form;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @media (min-width: 580px) {
+      width: 100%;
+    }
   }
 
   &__select {
@@ -136,6 +272,11 @@ h2 {
     gap: 15px;
     justify-content: space-around;
     list-style: none;
+    margin: 0;
+
+    @media (min-width: 580px) {
+      justify-content: start;
+    }
   }
 
   &__list-el {
@@ -154,15 +295,47 @@ h2 {
     }
   }
 
+  &__btn{
+    padding: 15px 30px;
+    @media (min-width: 580px) {
+      width: 40%;
+    }
+  }
+
+  &__top{
+    @media (min-width: 580px) {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @media (min-width: 980px) {
+      gap: 80px;
+    }
+  }
+
   &__text {
     font-weight: 400;
     font-size: 18px;
     line-height: 165%;
     color: #475569;
+
+    @media (min-width: 980px) {
+      grid-area: text;
+    }
   }
 
-  &__btn {
-    padding: 15px 30px;
+  &__image{
+    display: none;
+
+    @media (min-width: 580px) {
+      display: flex;
+    }
+
+    @media (min-width: 980px) {
+      width: 500px;
+      grid-area: img;
+    }
   }
 }
 
@@ -181,6 +354,12 @@ h2 {
     gap: 24px;
     padding-top: 14px;
     padding-bottom: 14px;
+
+    @media (min-width: 980px) {
+      flex-direction: row;
+      justify-content: space-between;
+      // width: 100%;
+    }
   }
 
   &__text-section {
@@ -199,10 +378,14 @@ h2 {
   }
 
   &__numbers {
-    margin: 0;
+    @media (min-width: 580px) {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 48px;
+    }
   }
 
-  &__text-customers {
+  &__text{
     margin: 0;
     font-weight: 400;
     font-size: 16px;
@@ -214,25 +397,37 @@ h2 {
     display: flex;
     gap: 8px;
     justify-content: center;
+
+    @media (min-width: 980px) {
+      gap: 40px;
+    }
   }
 
-  &__review-card {
-    display: grid;
+  &__card{
+    display: flex;
     align-items: center;
     padding: 6px 8px;
-    width: 33.3%;
+    width: 100%;
     background: #FFFFFF;
+    flex-direction: column;
     border: 1px solid rgba(211, 219, 231, 0.5);
     border-radius: 15px;
+    gap: 7px;
+    
+    @media (min-width: 580px) {
+      padding: 15px 30px;
+      gap: 14px;
+    }
+  }
 
-    grid-template: 
-      "web web web web"
-      "pnt str str str";
+  &__review{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
 
   &__website-icon {
-    grid-area: web;
-    margin-bottom: 9.6px;
+
   }
 
   &__points {
@@ -241,16 +436,16 @@ h2 {
     line-height: 12px;
     color: #1D293F;
     margin: 0;
-    margin-right: 10px;
-    grid-area: pnt;
+
+    @media (min-width: 580px) {
+      font-size: 18px;
+    }
   }
 
   &__start {
-    grid-area: str;
   }
 }
 
-// не знаю як зробити крапочки для UL, як на макеті
 .we-know {
 
   &__box {
@@ -260,6 +455,14 @@ h2 {
     align-items: center;
     gap: 30px;
     padding: 60px 0;
+
+    @media (min-width: 580px) {
+      flex-direction: row;
+    }
+
+    @media (min-width: 980px) {
+      justify-content: space-between;
+    }
   }
 
   &__img {
@@ -270,6 +473,10 @@ h2 {
     font-size: 24px;
     line-height: 140%;
     color: #1D293F;
+
+    @media (min-width: 980px) {
+      font-size: 34px;
+    }
   }
 
   &__list {
@@ -281,7 +488,17 @@ h2 {
     font-size: 20px;
     line-height: 140%;
     color: #475569;
+
+    @media (min-width: 980px) {
+    }
   }
+
+  &__img{
+    @media (min-width: 980px) {
+      width: 300px;
+    }
+  }
+
 }
 
 .your-life {
@@ -290,6 +507,7 @@ h2 {
   align-items: center;
   gap: 50px;
   background: #F7F8FC;
+
 
   &__box {
     padding: 60px 0 30px 0;
@@ -306,6 +524,12 @@ h2 {
   }
 
   &__cards-section {
+    
+    @media (min-width: 980px) {
+      display: flex;
+      gap: 30px;
+      flex-direction: row;
+    }
   }
 
   &__card {
@@ -369,6 +593,11 @@ h2 {
     margin: 0;
     padding: 0;
     left: 15%;
+
+    @media (min-width: 580px) {
+      left: 7%;
+      margin-top: -380px;
+    }
   }
 
   &__left {
@@ -378,6 +607,10 @@ h2 {
     padding: 0;
     left: 0;
     margin-top: 375px;
+
+    @media (min-width: 580px) {
+      margin-top: 275px; 
+    }
   }
 
   &__right {
@@ -387,14 +620,34 @@ h2 {
     padding: 0;
     right: 0;
     margin-top: 375px;
+
+    @media (min-width: 580px) {
+      margin-top: 275px; 
+    }
   }
 
   &__card {
+    display: flex;
+    flex-direction: column;
     padding: 25px 30px;
+
+    @media (min-width: 580px) {
+      // padding-top: 0px;
+      flex-direction: row;
+    }
   }
 
-  &__profile-section {
+  &__profile{
     width: 100%;
+
+    @media (min-width: 580px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(211, 219, 231, 0.7);
+      padding-right: 30px;
+      width: 70%;
+    }
   }
 
   &__profile-pic {
@@ -403,6 +656,10 @@ h2 {
     border-radius: 100px;
     margin: auto;
     margin-bottom: 20px;
+
+    @media (min-width: 580px) {
+      width: 153px;
+    }
   }
 
   &__title {
@@ -470,6 +727,17 @@ h2 {
       width: 100%;
       height: 50px;
       background: linear-gradient(0deg, #fff, transparent);
+
+      @media (min-width: 580px) {
+        display: none;
+      }
+    }
+
+    @media (min-width: 580px) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
     }
   }
 
@@ -536,6 +804,11 @@ h2 {
     flex-direction: column;
     padding: 0px;
     gap: 20px;
+
+    @media (min-width: 580px) {
+      gap: 10px;
+      width: 100%;
+    }
   }
 
   &__reviews-title {
@@ -599,7 +872,6 @@ h2 {
     margin: 0;
   }
 
-  // не получається зробити faded ефект
   &__see-all {
     font-weight: 500;
     font-size: 16px;
@@ -607,7 +879,6 @@ h2 {
     text-align: center;
     color: #6AA6DA;
     text-decoration: none;
-    //   margin-top: -60px;
   }
 
   &__pages {
@@ -615,6 +886,10 @@ h2 {
     margin: auto;
     margin-top: 30px;
     width: 100%;
+
+    @media (min-width: 580px) {
+      width: 330px;
+    }
   }
 }
 
@@ -626,6 +901,13 @@ h2 {
   &__box {
     width: 100%;
     padding-bottom: 15px;
+    
+    @media (min-width: 980px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 100px;
+    }
   }
 
   &__main-section {
@@ -657,6 +939,15 @@ h2 {
     gap: 24px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 25px;
+
+    @media (min-width: 580px) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    @media (min-width: 980px) {
+      width: 100%;
+    }
   }
 
   &__add-item {
@@ -671,6 +962,14 @@ h2 {
     border-top: 1px solid #FFFFFF;
     border-bottom: 1px solid #FFFFFF;
     padding: 20px 0;
+
+    @media (min-width: 580px) {
+      border-top: transparent;
+      border-bottom: transparent;
+      border-left: 1px solid #FFFFFF;
+      border-right: 1px solid #FFFFFF;
+      padding: 0px 40px;
+    }
   }
 
   &__add-num {
@@ -700,6 +999,15 @@ h2 {
   padding-bottom: 60px;
   gap: 30px;
   background: #F7F8FC;
+  max-width: 100%;
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 580px) {
+      gap: 50px;
+    }
+  }
 
   &__title {
     font-weight: 500;
@@ -714,6 +1022,14 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media (min-width: 580px) {
+      gap: 50px;
+    }
+
+    @media (min-width: 980px) {
+      width: 100%;
+    }
   }
 
   &__card {
@@ -727,6 +1043,14 @@ h2 {
     "num non img"
     "ttl ttl ttl"
     "txt txt txt";
+
+    @media (min-width: 580px) {
+      grid-template: 
+      "img num non"
+      "img ttl ttl"
+      "img txt txt";
+    }
+    
   }
 
   &__card-number {
@@ -738,6 +1062,10 @@ h2 {
 
   &__card-art {
     grid-area: img;
+
+    @media (min-width: 580px) {
+      width: 240px;
+    }
   }
 
   &__card-title {
@@ -761,20 +1089,36 @@ h2 {
 }
 
 .happy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  gap: 40px;
   background: #475569;
 
-  &__top-section {
+  &__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 40px;
+
+    @media (min-width: 580px) {
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+
+  &__top{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: auto;
+
+    @media (min-width: 580px) {
+      justify-content: start;
+      align-items: start;
+      order: 1;
+      width: 75em;
+    }
   }
 
   &__title {
@@ -784,6 +1128,10 @@ h2 {
     text-align: center;
     margin: 0;
     color: #FFFFFF;
+
+    @media (min-width: 580px) {
+      text-align: start;
+    }
   }
 
   &__text {
@@ -793,16 +1141,46 @@ h2 {
     text-align: center;
     margin: 0;
     color: #FFFFFF;
+
+    @media (min-width: 580px) {
+      text-align: start;
+    }
   }
 
   &__rating {
     margin-top: 40px;
+
+    @media (min-width: 580px) {
+      display: flex;
+      text-align: start;
+    }
+  }
+
+  &__powered{
+    display: none;
+    @media (min-width: 580px) {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+    }
+  }
+
+  &__trustpilot{
+    display: none;
+    @media (min-width: 580px) {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+    }
   }
 
   &__reviews {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media (min-width: 580px) {
+    }
   }
 
   &__card {
@@ -815,6 +1193,15 @@ h2 {
     border: 1px solid rgba(211, 219, 231, 0.7);
     box-shadow: 0px 8px 28px rgba(29, 41, 63, 0.28);
     border-radius: 10px;
+  }
+
+  &__card:nth-child(1){
+    @media (min-width: 580px) {
+      display: none;
+    }
+    @media (min-width: 980px) {
+      display: flex;
+    }
   }
 
   &__card-info {
@@ -900,6 +1287,10 @@ h2 {
     border: 2px solid #A788CE;
     border-radius: 25px;
     box-shadow: 10px 10px 0 #CAAAD8;
+
+    @media (min-width: 580px) {
+      padding: 40px 60px;
+    }
   }
 
   &__card-title {
@@ -1006,12 +1397,26 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    @media (min-width: 580px) {
+      align-items: center;
+    }
+
+    @media (min-width: 980px) {
+      flex-direction: row;
+      margin: auto;
+      width: 71%;
+    }
   }
 
   &__card {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @media (min-width: 580px) {
+      width: 51.3%;
+    }
   }
 
   &__card-title {
@@ -1056,6 +1461,18 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media (min-width: 580px) {
+      display: grid;
+      grid-template: 
+        "itm itm itm"  
+        "itm itm itm"
+        "itm itm itm";
+    }
+
+    @media (min-width: 980px) {
+      width: 100%;
+    }
   }
 
   &__item-card {
@@ -1069,17 +1486,24 @@ h2 {
     line-height: 140%;
     text-align: center;
     color: #475569;
+
+    @media (min-width: 580px) {
+      padding: 50px 20px 22px 20px;
+    }
   }
 }
 
 .customer-care {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  gap: 50px;
   background: #F7F8FC;
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 50px;
+  }
 
   &__title {
     font-weight: 500;
@@ -1087,7 +1511,26 @@ h2 {
     line-height: 130%;
     text-align: center;
     color: #1D293F;
-    margin-bottom: 50px;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 580px) {
+      flex-direction: row;
+    }
+
+    @media (min-width: 980px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__image {
+
+    @media (min-width: 580px) {
+      order: 2;
+    }
   }
 
   &__list-section {
@@ -1095,6 +1538,10 @@ h2 {
     flex-direction: column;
     gap: 30px;
     margin-top: 18px;
+
+    @media (min-width: 580px) {
+      order: 1;
+    }
   }
 
   &__list {
@@ -1132,13 +1579,21 @@ h2 {
 }
 
 .faq {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  gap: 50px;
+
+  &__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 50px;
+    
+    @media (min-width: 980px) {
+      margin: auto;
+      max-width: 780px;
+    }
+  }
 
   &__title {
     font-weight: 600;
@@ -1215,6 +1670,11 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 50px;
+
+    @media (min-width: 980px) {
+      margin: auto;
+      max-width: 780px;
+    }
   }
 
   &__title {
@@ -1258,6 +1718,10 @@ h2 {
   gap: 10px;
   padding-bottom: 50px;
 
+  @media (min-width: 580px) {
+    align-items: center;
+  }
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -1266,6 +1730,11 @@ h2 {
     gap: 45px;
     background: #E1EDF8;
     border-radius: 25px;
+
+    @media (min-width: 580px) {
+      flex-direction: row;
+    }
+
   }
 
   &__card-info {
@@ -1288,6 +1757,18 @@ h2 {
     color: #1D293F;
   }
 
+  &__card-btn{
+
+    @media (min-width: 580px) {
+      width: 53%;
+    }
+
+    @media (min-width: 760px) {
+      width: 28%;
+      padding: 15px 30px;
+    }
+  }
+
 
 }
 
@@ -1301,6 +1782,39 @@ h2 {
     padding-top: 70px;
     padding-bottom: 70px;
     gap: 50px;
+
+    @media (min-width: 980px) {
+      display: grid;
+      grid-template: 
+        "txt map acpt"
+        "info map cntct";
+      gap: 30px;
+      justify-content: space-between;
+    }
+  }
+
+  &__section:nth-child(1){
+    @media (min-width: 980px) {
+      grid-area: txt;
+    }
+  }
+
+  &__section:nth-child(2){
+    @media (min-width: 980px) {
+      grid-area: map;
+    }
+  }
+
+  &__section:nth-child(3){
+    @media (min-width: 980px) {
+      grid-area: acpt;
+    }
+  }
+
+  &__section:nth-child(4){
+    @media (min-width: 980px) {
+      grid-area: cntct;
+    }
   }
 
   &__title {
@@ -1323,13 +1837,36 @@ h2 {
     line-height: 145%;
     color: #C8DEFE;
     text-decoration: none;
+
+    @media (min-width: 580px) {
+      width: auto;
+    }
+  }
+
+  &__map{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (min-width: 580px) {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    @media (min-width: 980px) {
+      flex-direction: column;
+    }
   }
 
   &__map-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    width: auto;
+    gap: 40px;
+
+    @media (min-width: 980px) {
+      flex-direction: column;
+    }
   }
 
   &__section {
@@ -1340,11 +1877,21 @@ h2 {
     gap: 20px;
   }
 
+  &__contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (min-width: 580px) {
+      flex-direction: row;
+    }
+  }
+
   &__contact {
     display: flex;
     flex-direction: row;
     gap: 7.5px;
   }
+
 
   &__contact-info {
     font-weight: 400;
@@ -1352,33 +1899,11 @@ h2 {
     line-height: 145%;
     color: #C8DEFE;
   }
-}
 
-.burger {
-  width: 25px;
-
-  span {
-    display: block;
-    font-size: 0;
-    width: 100%;
-    height: 2px;
-    background: black;
-    margin-bottom: 9px;
-
-  }
-
-  &.open {
-    span {
-      transform: rotate(45deg);
-
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        transform: rotate(-45deg);
-        margin-top: -22px;
-      }
+  &__br{
+    @media (min-width: 580px) {
+      display: none;
     }
   }
 }
+

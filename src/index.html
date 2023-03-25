@@ -16,12 +16,17 @@
           <div class="header__logo">
             <img src="images/paperdon-logo.svg" alt="paperdon">
           </div>
-          <div class="header__menu">
-  
-          </div>
           <div class="header__buttons">
-            <a class="header__log-in-btn" href="#">Log In</a>
-            <a class="header__hire-btn btn" href="#">Hire</a>
+            <ul class="header__list">
+              <li class="header__item"><a href="#">How it works</a></li>
+              <li class="header__item"><a href="#">Top experts</a></li>
+              <li class="header__item"><a href="#">Contacts</a></li>
+              <li class="header__item"><a href="#">FAQ</a></li>
+            </ul>
+            <a class="header__login" href="#">Log In</a>
+            <a class="header__login header__login--extended" href="#">Log In/Sign up</a>
+            <a class="header__hire btn" href="#">Hire</a>
+            <a class="header__hire header__hire--extended btn" href="#">Hire Expert</a>
             <div class="burger">
               <span>-</span>
               <span>-</span>
@@ -32,70 +37,81 @@
       </div>
     </header>
 
-    <div class="first-screen">
+    <section class="first-screen">
       <div class="container">
         <div class="first-screen__box">
-          <div class="first-screen__text">
-            <h1 class="first-screen__title title">Staying late to do homework again?</h1>
-            <p class="first_screen__text">It doesn’t have to be this way! Enjoy 
-              the process of studying with the help of our caring experts who’re 
-              up to any assignment you may have.</p>
+          <div class="first-screen__top">
+            <div class="first-screen__text">
+              <h1 class="first-screen__title title">Staying late to do homework again?</h1>
+              <p class="first-screen__text">It doesn’t have to be this way! Enjoy 
+                the process of studying with the help of our caring experts who’re 
+                up to any assignment you may have.</p>
+            </div>
+            <img src="images/working-late.svg" alt="working late" class="first-screen__image">
           </div>
           <div class="first-screen__form">
-            <select class="first-screen__select" name="subject">
-              <option value="" disabled selected hidden>What subject do you need help with?</option>
-              <option value="option-1">option-1</option>
-              <option value="option-2">option-2</option>
-              <option value="option-3">option-3</option>
-            </select>
-            <ul class="first-screen__list">
-              <li class="first-screen__list-el first-screen__list-el--not-link"><p>For ex.:</p></li>
-              <li class="first-screen__list-el"><a>English</a></li>
-              <li class="first-screen__list-el"><a>Business</a></li>
-              <li class="first-screen__list-el"><a>Nursing</a></li>
-              <li class="first-screen__list-el"><a>History</a></li>
-            </ul>
+            <div class="first-screen__options">
+              <select class="first-screen__select" name="subject">
+                <option value="" disabled selected hidden>What subject do you need help with?</option>
+                <option value="option-1">option-1</option>
+                <option value="option-2">option-2</option>
+                <option value="option-3">option-3</option>
+              </select>
+              <ul class="first-screen__list">
+                <li class="first-screen__list-el first-screen__list-el--not-link"><p>For ex.:</p></li>
+                <li class="first-screen__list-el"><a>English</a></li>
+                <li class="first-screen__list-el"><a>Business</a></li>
+                <li class="first-screen__list-el"><a>Nursing</a></li>
+                <li class="first-screen__list-el"><a>History</a></li>
+              </ul>
+            </div>
             <div class="first-screen__btn btn">Get Help In 7 Minutes</div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="trusted">
+    <section class="trusted">
       <div class="container">
         <div class="trusted__box">
           <div class="trusted__text-section">
-            <p class="trusted__text-by">Trusted by</p>
-            <h1 class="trusted__numbers">14,000+</h1>
-            <p class="trusted__text-customers">happy customers and experts</p>
+            <p class="trusted__text">Trusted by</p>
+            <h3 class="trusted__numbers">14,000+</h3>
+            <p class="trusted__text">happy customers and experts</p>
           </div>
           <div class="trusted__reviews">
-            <div class="trusted__review-card">
+            <div class="trusted__card">
               <img src="images/trustpilot-logo.svg" alt="trustpilot logo" class="trusted__website-icon">
-              <p class="trusted__points">4.6</p>
-              <img src="images/trustpilot-stars.svg" alt="trustpilot stars" class="trusted__stars">
+              <div class="trusted__review">
+                <p class="trusted__points">4.6</p>
+                <img src="images/trustpilot-stars.svg" alt="trustpilot stars" class="trusted__stars">
+              </div>
             </div>
-            <div class="trusted__review-card">
+            <div class="trusted__card">
               <img src="images/sitejabber-logo.svg" alt="sitejabber logo" class="trusted__website-icon">
-              <p class="trusted__points">4.6</p>
-              <img src="images/sitejabber-stars.svg" alt="sitejabber stars" class="trusted__stars">
+              <div class="trusted__review">
+                <p class="trusted__points">4.6</p>
+                <img src="images/sitejabber-stars.svg" alt="sitejabber stars" class="trusted__stars">
+              </div>
             </div>
-            <div class="trusted__review-card">
+            <div class="trusted__card">
               <img src="images/reviewsio-logo.svg" alt="reviewsio logo" class="trusted__website-icon">
-              <p class="trusted__points">4.7</p>
-              <img src="images/reviewsio-stars.svg" alt="reviewsio stars" class="trusted__stars">
+              <div class="trusted__review">
+                <p class="trusted__points">4.7</p>
+                <img src="images/reviewsio-stars.svg" alt="reviewsio stars" class="trusted__stars">
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="we-know">
+    <section class="we-know">
       <div class="container">
         <div class="we-know__box">
           <img src="images/work-time.svg" alt="stressed girl in front of the table" class="we-know__img">
           <div class="we-know__text-section">
-            <h1 class="we-know__title">We know how stressful it is to be a student:</h1>
+            <h3 class="we-know__title">We know how stressful it is to be a student:</h3>
             <ul class="we-know__list">
               <li class="we-know__list-item"><p>Deadlines are always 
                 approaching and unfinished tasks pile up.</p></li>
@@ -107,12 +123,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="your-life">
+    <section class="your-life">
       <div class="container">
         <div class="your-life__box">
-          <h1 class="your-life__title title">What do you want your life to look like?</h1>
+          <h3 class="your-life__title title">What do you want your life to look like?</h3>
           <div class="your-life__cards-section">
             <div class="your-life__card card">
               <img src="images/stressed-guy.svg" alt="stressed guy" class="your-life__img">
@@ -137,17 +153,17 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="experts">
+    <section class="experts">
       <div class="container">
         <div class="experts__box">
           <img src="images/left.svg" alt="left" class="experts__left">
           <img src="images/right.svg" alt="right" class="experts__right">
-          <h1 class="experts__title title">Top certified experts</h1>
+          <h3 class="experts__title title">Top certified experts</h3>
           <div class="experts__card card">
           <img src="images/online.svg" alt="online" class="experts__online">
-            <div class="experts__profile-section">
+            <div class="experts__profile">
               <img src="images/writer-profile-pic.svg" alt="profile picture" class="experts__profile-pic">
               <div class="experts__writer-section">
                 <p class="experts__name">Prof.Liam.PHD</p>
@@ -211,15 +227,15 @@
           <img class="experts__pages" src="images/pages.svg" alt="pages">
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="completed">
+    <section class="completed">
       <div class="container">
         <div class="completed__box">
           <div class="completed__main-section">
             <p class="completed__main-num">98063</p>
             <p class="completed__main-text">Completed Tasks</p>
-            <span>sep</span>
+            <!-- <span>sep</span> -->
           </div>
           <div class="completed__add-section">
             <div class="completed__add-item">
@@ -237,13 +253,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="connect">
+    <section class="connect">
       <div class="container">
-        <div class="connect-box">
-          <h1 class="connect__title title">PaperDon connects students 
-            with experts</h1>
+        <div class="connect__box">
+          <h3 class="connect__title title">PaperDon connects students 
+            with experts</h3>
           <div class="connect__list">
             <div class="connect__card">
               <img src="images/num-1.svg" alt="#1" class="connect__card-number">
@@ -283,15 +299,18 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="happy">
+    <section class="happy">
       <div class="container">
         <div class="happy__box">
-          <div class="happy__top-section">
+          <div class="happy__top">
             <p class="happy__title">Happy Students</p>
             <p class="happy__text">We work to make the lives of students easier.</p>
             <img src="images/rating.svg" alt="rating" class="happy__rating">
+            <div class="happy__powered">
+              <img src="images/powered.svg" alt="powered trustpilot" class="happy__trustpilot">
+            </div>
           </div>
           <div class="happy__reviews">
             <div class="happy__card">
@@ -339,12 +358,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="price">
+    <section class="price">
       <div class="container">
         <div class="price__box">
-          <h1 class="price__title title">Order Now and Save Money</h1>
+          <h3 class="price__title title">Order Now and Save Money</h3>
           <div class="price__card">
             <p class="price__card-title">Get all these features for 
               <span class="price__card-ttl-price">$49</span>
@@ -395,12 +414,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="safety">
+    <section class="safety">
       <div class="container">
         <div class="safety__box">
-          <h1 class="safety__title title">Your Safety is Our Top Priority</h1>
+          <h3 class="safety__title title">Your Safety is Our Top Priority</h3>
           <div class="safety__list">
             <div class="safety__card card">
               <img src="images/safe.svg" alt="safe" class="safety__image">
@@ -420,12 +439,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="assist">
+    <section class="assist">
       <div class="container">
         <div class="assist__box">
-          <h1 class="assist__title title">We can assist you with</h1>
+          <h3 class="assist__title title">We can assist you with</h3>
           <div class="assist__list">
             <p class="assist__item-card card">Essay</p>
             <p class="assist__item-card card">Research Paper</p>
@@ -439,31 +458,33 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="customer-care">
+    <section class="customer-care">
       <div class="container">
         <div class="customer-care__box">
-          <h1 class="customer-care__title title">Customer Care Team</h1>
-          <img src="images/support-team.svg" alt="support team" class="customer-care__image">
-          <div class="customer-care__list-section">
-            <p class="customer-care__list-title">Will come to the rescue if you:</p>
-            <ul class="customer-care__list">
-              <li class="customer-care__item"><p>Have questions about PaperDon</p></li>
-              <li class="customer-care__item"><p>Want to make adjustments to your task</p></li>
-              <li class="customer-care__item"><p>Have difficulties contacting your expert</p></li>
-              <li class="customer-care__item"><p>Need anything else</p></li>
-            </ul>
-            <a href="#" class="customer-care__button">Message us</a>
+          <h3 class="customer-care__title title">Customer Care Team</h3>
+          <div class="customer-care__info">
+            <img src="images/support-team.svg" alt="support team" class="customer-care__image">
+            <div class="customer-care__list-section">
+              <p class="customer-care__list-title">Will come to the rescue if you:</p>
+              <ul class="customer-care__list">
+                <li class="customer-care__item"><p>Have questions about PaperDon</p></li>
+                <li class="customer-care__item"><p>Want to make adjustments to your task</p></li>
+                <li class="customer-care__item"><p>Have difficulties contacting your expert</p></li>
+                <li class="customer-care__item"><p>Need anything else</p></li>
+              </ul>
+              <a href="#" class="customer-care__button">Message us</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="faq">
+    <section class="faq">
       <div class="container">
         <div class="faq__box">
-          <h1 class="faq__title title">Frequently asked questions</h1>
+          <h3 class="faq__title title">Frequently asked questions</h3>
           <div class="faq__list">
             <div class="faq__card card">
               <p class="faq__question">How does PaperDon work?</p>
@@ -499,12 +520,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="how-to">
+    <section class="how-to">
       <div class="container">
         <div class="how-to__box">
-          <h1 class="how-to__title title">How To Prepare And Plan Your Essay</h1>
+          <h3 class="how-to__title title">How To Prepare And Plan Your Essay</h3>
           <p class="how-to__text">An academic essay is a piece 
             of writing that addresses an academic issue or 
             question about subjects in a discipline such as 
@@ -515,9 +536,9 @@
           <a href="#" class="how-to__button">Read More</a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="banner">
+    <section class="banner">
       <div class="container">
         <div class="banner__card">
           <div class="banner__card-info">
@@ -528,7 +549,7 @@
           <img src="images/paper-done.svg" alt="paper done" class="banner__image">
         </div>
       </div>
-    </div>
+    </section>
 
     <footer class="footer">
       <div class="container">
@@ -542,13 +563,15 @@
           </div>
           <div class="footer__section">
             <p class="footer__title">Site Map</p>
-            <div class="footer__map-row">
-              <a href="#" class="footer__site-map-item">Home</a>
-              <a href="#" class="footer__site-map-item">Top experts </a>
-              <a href="#" class="footer__site-map-item">FAQ</a>
-            </div>
-            <div class="footer__map-row">
-              <a href="#" class="footer__site-map-item">Terms of Use / Privacy Policy</a>
+            <div class="footer__map">
+              <div class="footer__map-row">
+                <a href="#" class="footer__site-map-item">Home</a>
+                <a href="#" class="footer__site-map-item">Top experts </a>
+                <a href="#" class="footer__site-map-item">FAQ</a>
+              </div>
+              <div class="footer__map-row">
+                <a href="#" class="footer__site-map-item">Terms of Use / Privacy Policy</a>
+              </div>
             </div>
           </div>
           <div class="footer__section">
@@ -557,19 +580,21 @@
           </div>
           <div class="footer__section">
             <p class="footer__title">Contact Us</p>
-            <div class="footer__contact">
-              <img src="images/phone.svg" alt="phone" class="footer__phone-icon">
-              <p class="footer__contact-info">+1 (844) 335 1283</p>
-            </div>
-            <div class="footer__contact">
-              <img src="images/mail.svg" alt="mail" class="footer__email-icon">
-              <p class="footer__contact-info">support@paperdon.com</p>
+            <div class="footer__contacts">
+              <div class="footer__contact">
+                <img src="images/phone.svg" alt="phone" class="footer__phone-icon">
+                <p class="footer__contact-info">+1 (844) 335 1283</p>
+              </div>
+              <div class="footer__contact">
+                <img src="images/mail.svg" alt="mail" class="footer__email-icon">
+                <p class="footer__contact-info">support@paperdon.com</p>
+              </div>
             </div>
           </div>
           <div class="footer__section">
             <p class="footer__title">2022 © PaperDon.com</p>
             <p class="footer__text">PaperDon.com is owned and operated by RATATATA LTD,
-              <br>1000, Vitosha 48 str., Sofia, Bulgaria</p>
+              <br class="footer__br">1000, Vitosha 48 str., Sofia, Bulgaria</p>
           </div>
         </div>
       </div>
