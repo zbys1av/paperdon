@@ -132,6 +132,7 @@ ul{
     width: 100%;
     align-items: center;
     border-bottom: 1px solid rgba(211, 219, 231, 0.5);
+    padding-top: 10px;
     padding-bottom: 10px;
   }
 
@@ -213,6 +214,7 @@ ul{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding-top: 60px;
     padding-bottom: 60px;
 
     @media (min-width: 580px) {
@@ -340,9 +342,6 @@ ul{
 }
 
 .trusted {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background: #F7F8FC;
   border-width: 1px 0px;
   border-style: solid;
@@ -358,7 +357,7 @@ ul{
     @media (min-width: 980px) {
       flex-direction: row;
       justify-content: space-between;
-      // width: 100%;
+      width: 100%;
     }
   }
 
@@ -468,6 +467,12 @@ ul{
   &__img {
   }
 
+  &__text-section{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
   &__title {
     font-weight: 500;
     font-size: 24px;
@@ -480,7 +485,9 @@ ul{
   }
 
   &__list {
-
+    margin: 0;
+    list-style: none;
+    padding: 0;
   }
 
   &__list-item {
@@ -488,6 +495,23 @@ ul{
     font-size: 20px;
     line-height: 140%;
     color: #475569;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      background: #FFE9A9;
+      border: 1px solid #A788CE;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      box-shadow: 3px 3px 0 #CAAAD8;
+    }
 
     @media (min-width: 980px) {
     }
@@ -502,12 +526,8 @@ ul{
 }
 
 .your-life {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 50px;
   background: #F7F8FC;
-
 
   &__box {
     padding: 60px 0 30px 0;
@@ -524,15 +544,18 @@ ul{
   }
 
   &__cards-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     
     @media (min-width: 980px) {
-      display: flex;
       gap: 30px;
       flex-direction: row;
     }
   }
 
   &__card {
+    width: 50%;
     padding: 40px 15px 10px 15px;
     margin-bottom: 30px;
   }
@@ -587,16 +610,18 @@ ul{
 
 .experts {
 
+  &__box{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   &__online {
     display: flex;
     position: absolute;
-    margin: 0;
-    padding: 0;
-    left: 15%;
+    left: 0;
+    top: 0;
 
     @media (min-width: 580px) {
-      left: 7%;
-      margin-top: -380px;
     }
   }
 
@@ -626,19 +651,48 @@ ul{
     }
   }
 
+  &__list{
+    display: flex;
+    gap: 40px;
+  }
+
+  //не зміг прибрати 2-го райтера через nth-child -_-
   &__card {
     display: flex;
     flex-direction: column;
     padding: 25px 30px;
+    position: relative;
+
 
     @media (min-width: 580px) {
-      // padding-top: 0px;
       flex-direction: row;
+    }
+
+    &--hidden{
+      display: none;
+
+      @media (min-width: 980px) {
+        display: flex;
+        overflow: hidden;
+        width: 500px;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 140px;
+          width: 200px;
+          height: 100%;
+          background:  linear-gradient(270deg,rgb(255, 255, 255), transparent);
+        }
+      }
     }
   }
 
   &__profile{
     width: 100%;
+    position: relative;
 
     @media (min-width: 580px) {
       display: flex;
@@ -669,7 +723,6 @@ ul{
     text-align: center;
     color: #1D293F;
     margin-bottom: 30px;
-    margin-top: 50px;
   }
 
   &__writer-section {
@@ -900,7 +953,9 @@ ul{
 
   &__box {
     width: 100%;
+    padding-top: 15px;
     padding-bottom: 15px;
+
     
     @media (min-width: 980px) {
       display: flex;
@@ -992,9 +1047,9 @@ ul{
 }
 
 .connect {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
   gap: 30px;
@@ -1033,38 +1088,62 @@ ul{
   }
 
   &__card {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     padding: 20px 20px 30px;
     isolation: isolate;
     background: #FFFFFF;
     box-shadow: 0px 8px 28px rgba(71, 85, 105, 0.08);
     border-radius: 25px;
-    grid-template: 
-    "num non img"
-    "ttl ttl ttl"
-    "txt txt txt";
+    position: relative;
 
     @media (min-width: 580px) {
-      grid-template: 
-      "img num non"
-      "img ttl ttl"
-      "img txt txt";
+      flex-direction: row;
+      position: unset;
+      gap: 40px;
     }
-    
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @media (min-width: 580px) {
+      width: 60%;
+    }
+    @media (min-width: 980px) {
+      
+    }
   }
 
   &__card-number {
     display: flex;
     justify-content: end;
-    padding-top: 160%;
-    grid-area: num;
+    padding-top: 30%;
+    padding-bottom: 12px;
+    width: 40px;
+    
+
+    @media (min-width: 580px) {
+      padding-top: 40px;
+    }
   }
 
   &__card-art {
-    grid-area: img;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 37%;
+    order: -1;
 
     @media (min-width: 580px) {
-      width: 240px;
+      position: unset;
+      max-width: 400px;
+
+      &:nth-child(2){
+        order: 2;
+      }
     }
   }
 
@@ -1083,7 +1162,6 @@ ul{
     line-height: 140%;
     margin: 0;
     color: #475569;
-    margin-top: 16px;
     grid-area: txt;
   }
 }
@@ -1179,6 +1257,34 @@ ul{
     flex-direction: column;
     gap: 20px;
 
+    @media (min-width: 580px) {
+      overflow: hidden;
+      height: 495px;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(180deg, rgba(211, 219, 231, 0.5) 0%, rgba(211, 219, 231, 0) 100%);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(180deg, rgba(211, 219, 231, 0) 0%, rgba(211, 219, 231, 0.5) 100%);
+      }
+    }
+
     @media (min-width: 980px) {
       overflow: hidden;
       height: 595px;
@@ -1227,6 +1333,14 @@ ul{
     @media (min-width: 980px) {
       display: flex;
       margin-top: -25px;
+    }
+  }
+
+  &__card:nth-child(2){
+    @media (min-width: 580px) {
+      margin-top: -25px;
+    }
+    @media (min-width: 980px) {
     }
   }
 
@@ -1467,12 +1581,14 @@ ul{
 }
 
 .assist {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  gap: 50px;
+
+  &__box{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+  }
 
   &__title {
     font-weight: 500;
@@ -1529,6 +1645,10 @@ ul{
     padding-top: 60px;
     padding-bottom: 60px;
     gap: 50px;
+
+    @media (min-width: 580px) {
+      // justify-content: space-between;
+    }
   }
 
   &__title {
@@ -1542,16 +1662,20 @@ ul{
   &__info{
     display: flex;
     flex-direction: column;
+    gap: 19px;
 
     @media (min-width: 580px) {
       flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
     }
 
     @media (min-width: 980px) {
-      justify-content: space-between;
     }
   }
 
+
+  //потрібно змінити розмір картинки
   &__image {
 
     @media (min-width: 580px) {
@@ -1572,6 +1696,8 @@ ul{
 
   &__list {
     margin: 0;
+    list-style: none;
+    padding: 0;
   }
 
   &__list-title {
@@ -1586,6 +1712,23 @@ ul{
     font-size: 18px;
     line-height: 165%;
     color: #1D293F;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      background: #FFE9A9;
+      border: 1px solid #A788CE;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      box-shadow: 3px 3px 0 #CAAAD8;
+    }
   }
 
   &__button {
@@ -1609,7 +1752,7 @@ ul{
   &__box{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     padding-top: 60px;
     padding-bottom: 60px;
@@ -1649,6 +1792,7 @@ ul{
 
     &--selected {
       flex-direction: column;
+      justify-content: space-between;
     }
   }
 
@@ -1658,7 +1802,7 @@ ul{
     gap: 10px;
 
     &--selected {
-      display: flex;
+      justify-content: space-between;
     }
   }
 
@@ -1740,12 +1884,16 @@ ul{
 .banner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  // align-items: flex-start;
   gap: 10px;
   padding-bottom: 50px;
 
   @media (min-width: 580px) {
     align-items: center;
+  }
+
+  @media (min-width: 980px) {
+    // width: 100%;
   }
 
   &__card {
@@ -1759,6 +1907,9 @@ ul{
 
     @media (min-width: 580px) {
       flex-direction: row;
+    }
+
+    @media (min-width: 980px) {
     }
 
   }
