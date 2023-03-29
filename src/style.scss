@@ -99,6 +99,12 @@ ul{
 
 .burger {
   width: 25px;
+
+  @media (min-width: 290px) and (max-width: 360px) {
+      padding-top: 5px;
+      width: 25px;
+  }
+  
   @media (min-width: 980px) {
     display: none;
   }
@@ -111,6 +117,9 @@ ul{
     background: black;
     margin-bottom: 9px;
 
+    @media (min-width: 290px) and (max-width: 360px) {
+      margin-bottom: 5px;
+    }
   }
 
   &.open {
@@ -216,7 +225,11 @@ ul{
     padding-bottom: 10px;
   }
 
-  &__logo {
+  &__logo img{
+
+    @media (min-width: 290px) and (max-width: 360px) {
+      
+    }
   }
 
   &__list{
@@ -248,6 +261,10 @@ ul{
     flex-direction: row;
     align-items: center;
     gap: 15px;
+
+    @media (min-width: 290px) and (max-width: 360px) {
+      gap: 5px;
+    }
   }
 
   &__login{
@@ -287,6 +304,10 @@ ul{
   }
 
   &__hire{
+
+    @media (min-width: 290px) and (max-width: 360px) {
+      padding: 2px 10px;
+    }
     
     @media (min-width: 580px) {
       display: none;
@@ -460,6 +481,10 @@ ul{
     flex-direction: column;
     align-items: center;
     gap: 2px;
+
+    @media (min-width: 980px) {
+      align-items: start;
+    }
   }
 
   &__text-by {
@@ -484,12 +509,20 @@ ul{
     font-size: 16px;
     line-height: 140%;
     color: #475569;
+
+    @media (min-width: 980px) {
+    }
   }
 
   &__reviews {
     display: flex;
     gap: 8px;
     justify-content: center;
+
+    @media (min-width: 290px) and (max-width: 360px) {
+      align-items: center;
+      flex-direction: column;
+    }
 
     @media (min-width: 980px) {
       gap: 40px;
@@ -510,6 +543,12 @@ ul{
     @media (min-width: 580px) {
       padding: 15px 30px;
       gap: 14px;
+    }
+
+    @media (min-width: 980px) {
+      align-items: center;
+      justify-content: space-around;
+      padding: 15px 30px;
     }
   }
 
@@ -641,6 +680,10 @@ ul{
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    @media (min-width: 290px) and (max-width: 360px) {
+      
+    }
     
     @media (min-width: 980px) {
       gap: 30px;
@@ -649,9 +692,13 @@ ul{
   }
 
   &__card {
-    width: 50%;
+    width: 100%;
     padding: 40px 15px 10px 15px;
     margin-bottom: 30px;
+
+    @media (min-width: 580px){
+      width: 75.5%;
+    }
   }
 
   &__card-title {
@@ -769,7 +816,6 @@ ul{
         display: flex;
         overflow: hidden;
         width: 500px;
-        position: relative;
 
         &:after {
           content: '';
@@ -779,6 +825,10 @@ ul{
           width: 200px;
           height: 100%;
           background:  linear-gradient(270deg,rgb(255, 255, 255), transparent);
+        }
+
+        .experts__online{
+          display: none;
         }
       }
     }
@@ -1356,6 +1406,10 @@ ul{
       height: 495px;
       position: relative;
 
+      @media (min-width: 845px) {
+          height: 420px;
+      }
+
       &:before {
         content: '';
         display: block;
@@ -1432,7 +1486,6 @@ ul{
 
   &__card:nth-child(2){
     @media (min-width: 580px) {
-      margin-top: -25px;
     }
     @media (min-width: 980px) {
     }
@@ -1754,7 +1807,6 @@ ul{
     gap: 50px;
 
     @media (min-width: 580px) {
-      // justify-content: space-between;
     }
   }
 
@@ -1795,6 +1847,10 @@ ul{
     flex-direction: column;
     gap: 30px;
     margin-top: 18px;
+
+    @media (min-width: 290px) and (max-width: 360px) {
+      padding: 0 25px;
+    }
 
     @media (min-width: 580px) {
       order: 1;
@@ -1851,6 +1907,11 @@ ul{
     text-align: center;
     color: #FFFFFF;
     text-decoration: none;
+    
+    @media (min-width: 290px) and (max-width: 360px) {
+      width: 35%;
+      padding: 10px 25px;
+    }
 
     &:hover{
       color: #5795ca;
