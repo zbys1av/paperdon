@@ -68,6 +68,12 @@ img {
   text-align: center;
   color: #FFFFFF;
   text-decoration: none;
+
+  &:hover{
+    background: #f5836c;
+    color: #a1402d;
+    cursor: pointer;
+  }
 }
 
 p {
@@ -123,6 +129,80 @@ ul{
   }
 }
 
+.arrow-box{
+  position: relative;
+}
+
+.arrow{
+  position: absolute;
+  margin-top: 455px;
+  border: solid #475569;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  width: 7.5px;
+  height: 7.5px;
+  z-index: 100;
+  font-size: 70px;
+
+  @media (min-width: 369px) {
+    margin-top: 395px;
+  }
+
+  @media (min-width: 580px) {
+    margin-top: 305px;
+  }
+
+  @media (min-width: 980px) {
+    margin-top: 365px;
+  }
+
+  &:nth-child(1){
+    left: 0;
+    margin-left: 15px;
+    transform: rotate(135deg);
+  }
+
+  &:nth-child(2){
+    right: 0;
+    margin-right: 15px;
+    transform: rotate(-45deg);
+  }
+}
+
+//чомусь одна з ліній тонша
+.plus {
+  width: 25px;
+  position: relative;
+
+  span{
+
+    &:nth-child(1){
+      position: absolute;
+      display: block;
+      font-size: 0;
+      width: 16.5px;
+      height: 2px;
+      background: #475569;
+      top: 10px;
+      right: 0;
+      rotate: 90deg;
+    }
+
+    &:nth-child(2){
+      display: block;
+      position: absolute;
+      width: 16.5px;
+      font-size: 0;
+      height: 2px;
+      background: #475569;
+      right: 0;
+      top: 11px;
+    }
+
+  }
+}
+
 .header {
 
   &__box {
@@ -157,6 +237,10 @@ ul{
     line-height: 28px;
     text-align: center;
     color: #475569;
+
+    &:hover{
+      color: #6DABDD;
+    }
   }
 
   &__buttons {
@@ -173,6 +257,10 @@ ul{
     text-align: center;
     color: #475569;
     text-decoration: none;
+
+    &:hover{
+      color: #6DABDD;
+    }
     @media (min-width: 580px) {
       display: none;
     }
@@ -188,6 +276,12 @@ ul{
         gap: 10px;
         border: 1px solid #D3DBE7;
         border-radius: 15px;
+
+        &:hover{
+          color: #6DABDD;
+          background: #f5f5f5;
+          border: 1px solid #6DABDD;
+        }
       }
     }
   }
@@ -1609,15 +1703,20 @@ ul{
       grid-template: 
         "itm itm itm"  
         "itm itm itm"
+        "itm itm itm"
         "itm itm itm";
     }
 
     @media (min-width: 980px) {
       width: 100%;
+      grid-template: 
+        "itm itm itm itm"  
+        "itm itm itm itm" 
+        "itm itm itm itm";
     }
   }
 
-  &__item-card {
+  &__item {
     background: #FFFFFF;
     border: 1px solid rgba(211, 219, 231, 0.7);
     border-radius: 10px;
@@ -1631,6 +1730,14 @@ ul{
 
     @media (min-width: 580px) {
       padding: 50px 20px 22px 20px;
+    }
+
+    &--add{
+      display: none;
+
+      @media (min-width: 580px) {
+        display: flex;
+      }
     }
   }
 }
@@ -1744,6 +1851,11 @@ ul{
     text-align: center;
     color: #FFFFFF;
     text-decoration: none;
+
+    &:hover{
+      color: #5795ca;
+      background: #93cbfc;
+    }
   }
 }
 
@@ -1792,14 +1904,30 @@ ul{
 
     &--selected {
       flex-direction: column;
-      justify-content: space-between;
+    }
+
+    // не впевнений наскільки це правильний запис
+    &:hover{
+      cursor: pointer;
+      .faq__question{
+        color: #6AA6DA;
+      }
+      .plus{
+        span{
+          background: #6AA6DA;
+          &:nth-child(1){
+            display: none;
+          }
+        }
+      }
     }
   }
 
-  &__card-top {
+  &__top {
     display: flex;
-    flex-direction: row;
     gap: 10px;
+    justify-content: space-between;
+    width: 100%;
 
     &--selected {
       justify-content: space-between;
@@ -1825,6 +1953,11 @@ ul{
     font-size: 18px;
     line-height: 165%;
     color: #1D293F;
+    display: none;
+
+    &--selected {
+      display: block;
+    }
   }
 }
 
@@ -1878,13 +2011,18 @@ ul{
     text-decoration: none;
     color: #6AA6DA;
     width: 33%;
+
+    &:hover{
+      color: #ffffff;
+      background: #93cbfc;
+      border: 1px solid transparent;
+    }
   }
 }
 
 .banner {
   display: flex;
   flex-direction: column;
-  // align-items: flex-start;
   gap: 10px;
   padding-bottom: 50px;
 
@@ -1893,7 +2031,6 @@ ul{
   }
 
   @media (min-width: 980px) {
-    // width: 100%;
   }
 
   &__card {
