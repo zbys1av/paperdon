@@ -337,11 +337,7 @@ ul{
     }
 
     @media (min-width: 980px) {
-      display: grid;
-      grid-template: 
-        "text text text img img"
-        "text text text img img"
-        "form form form img img";
+
     }
   }
 
@@ -354,7 +350,13 @@ ul{
       justify-content: space-between;
     }
     @media (min-width: 980px) {
+      width: 55%;
+      margin-top: -60px;
       grid-area: form;
+    }
+
+    @media (min-width: 1050px) {
+      margin-top: -10%;
     }
   }
 
@@ -415,7 +417,9 @@ ul{
   &__btn{
     padding: 15px 30px;
     @media (min-width: 580px) {
-      width: 40%;
+      width: 60%;
+      height: 24px;
+      padding: 15px 0;
     }
   }
 
@@ -450,7 +454,7 @@ ul{
     }
 
     @media (min-width: 980px) {
-      width: 500px;
+      width: 1000px;
       grid-area: img;
     }
   }
