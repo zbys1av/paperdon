@@ -104,6 +104,11 @@ ul{
       padding-top: 5px;
       width: 25px;
   }
+
+  @media (min-width: 380px) {
+    padding-top: 5px;
+    width: 25px;
+  }
   
   @media (min-width: 980px) {
     display: none;
@@ -115,10 +120,29 @@ ul{
     width: 100%;
     height: 2px;
     background: black;
-    margin-bottom: 9px;
+    margin-bottom: 6px;
 
     @media (min-width: 290px) and (max-width: 360px) {
       margin-bottom: 5px;
+    }
+  }
+
+  &:hover{
+    span {
+
+      &:nth-child(1) {
+        transform: rotate(405deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transition: 0ms;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        margin-top: -17px;
+      }
     }
   }
 
@@ -138,21 +162,26 @@ ul{
   }
 }
 
-.arrow-box{
-  position: relative;
-}
+// .arrow-box{
+//   position: relative;
+// }
 
 .arrow{
   position: absolute;
   margin-top: 455px;
-  border: solid #475569;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  width: 7.5px;
-  height: 7.5px;
   z-index: 100;
   font-size: 70px;
+
+  padding: 16px 15px;
+  background: #F7F8FC;
+  border-width: 1px 0px 1px 1px;
+  border-style: solid;
+  border-color: rgba(211, 219, 231, 0.5);
+  border-radius: 0px 25px 25px 0px;
+
+  &:hover{
+    cursor: pointer;
+  }
 
   @media (min-width: 369px) {
     margin-top: 395px;
@@ -160,22 +189,24 @@ ul{
 
   @media (min-width: 580px) {
     margin-top: 305px;
+
+    padding: 25px 15px;
+    border-color: rgba(211, 219, 231, 0.5);
+    border-radius: 0px 20px 20px 0px;
   }
 
   @media (min-width: 980px) {
-    margin-top: 365px;
+    margin-top: 72px;
+    padding: 203px 21px;
   }
 
   &:nth-child(1){
     left: 0;
-    margin-left: 15px;
-    transform: rotate(135deg);
   }
 
   &:nth-child(2){
     right: 0;
-    margin-right: 15px;
-    transform: rotate(-45deg);
+    transform: rotate(180deg);
   }
 }
 
@@ -1195,9 +1226,6 @@ ul{
 }
 
 .connect {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
   gap: 30px;
@@ -1250,6 +1278,10 @@ ul{
       position: unset;
       gap: 40px;
     }
+
+    &:nth-child(even){
+      flex-direction: row-reverse;
+    }
   }
 
   &__info{
@@ -1260,7 +1292,6 @@ ul{
       width: 60%;
     }
     @media (min-width: 980px) {
-      
     }
   }
 
@@ -1288,10 +1319,6 @@ ul{
     @media (min-width: 580px) {
       position: unset;
       max-width: 400px;
-
-      &:nth-child(2){
-        order: 2;
-      }
     }
   }
 
@@ -1929,7 +1956,6 @@ ul{
   &__box{
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
     padding-top: 60px;
     padding-bottom: 60px;
@@ -1971,7 +1997,6 @@ ul{
       flex-direction: column;
     }
 
-    // не впевнений наскільки це правильний запис
     &:hover{
       cursor: pointer;
       .faq__question{
@@ -1981,7 +2006,13 @@ ul{
         span{
           background: #6AA6DA;
           &:nth-child(1){
-            display: none;
+            margin-top: 1px;
+            opacity: 50%;
+            transform: rotate(450deg);
+          }
+
+          &:nth-child(2){
+            transform: rotate(180deg);
           }
         }
       }
