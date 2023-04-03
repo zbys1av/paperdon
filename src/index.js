@@ -1,18 +1,48 @@
 import './style.scss';
-console.log('Webpack starter with SCSS and dev server');
+// console.log('Webpack starter with SCSS and dev server');
 
-const slidesContainer = document.getElementsByClassName("experts__list");
-const slide = document.querySelector(".card");
+//SWIPER 
+// import Swiper, { Navigation, Pagination } from 'swiper';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
-const prevButton = document.getElementById("left");
-const nextButton = document.getElementById("right");
+// const swiper = new Swiper('.swiper', {
+//   direction: 'vertical',
+//   loop: true,
 
-nextButton.addEventListener("click", () => {
-  const slideWidth = slide.clientWidth;
-  slidesContainer.scrollLeft += slideWidth;
-});
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
 
-prevButton.addEventListener("click", () => {
-  const slideWidth = slide.clientWidth;
-  slidesContainer.scrollLeft -= slideWidth;
-});
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+// });
+
+//BURGER
+const menu = document.querySelector(".header__list");
+const menuItems = document.querySelectorAll(".header__item");
+const hamburger= document.querySelector(".burger");
+// const closeIcon= document.querySelector(".closeIcon");
+// const menuIcon = document.querySelector(".menuIcon");
+
+function toggleManu(){
+  if (menu.classList.contains("open")){
+    menu.classList.remove("open")
+  } else {
+    menu.classList.add("open")
+  }
+}
+
+hamburger.addEventListener("click", toggleMenu);
+menuItems.forEach(
+  function(menuItem){
+    menuItem.addEventListener("click", toggleMenu);
+  }
+)
