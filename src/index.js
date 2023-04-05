@@ -25,21 +25,12 @@ import './style.scss';
 //   },
 // });
 
+
 //BURGER
 const menuButton = document.querySelector(".burger");
 const menuShow = document.querySelector(".header__list");
 
 //BURGER__MENU
-// document.addEventListener('click', function handleClick(event){
-//   if (menuButton.classList.contains("open")){
-//     menuButton.classList.remove('open');      //change to burger
-//     menuShow.classList.remove('show');        //hide menu
-//   } else {
-//     menuButton.classList.add('open');         //change to "X"
-//     menuShow.classList.add('show');           //show menu
-//   }
-// });
-
 function toggleMenu(){
   if (menuButton.classList.contains("open")){
     menuButton.classList.remove('open');      //change to burger
