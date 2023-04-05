@@ -2285,6 +2285,10 @@ ul{
     color: #C8DEFE;
     text-decoration: none;
 
+    &:hover{
+      color: #e7f1ff;
+    }
+
     @media (min-width: 580px) {
       width: auto;
     }
@@ -2340,11 +2344,16 @@ ul{
   }
 
 
-  &__contact-info {
+  &__contact-info a{
     font-weight: 400;
     font-size: 14px;
     line-height: 145%;
     color: #C8DEFE;
+    text-decoration: none;
+
+    &:hover{
+      color: #e7f1ff;
+    }
   }
 
   &__br{
