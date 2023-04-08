@@ -258,7 +258,6 @@ ul{
     z-index: 99;
     background: #ffffff;
     color: white;
-    // padding-top: 4rem;
 
     @media (min-width: 920px) {
       display: flex;
@@ -871,9 +870,26 @@ ul{
     }
   }
 
+  .swiper{
+    // width: 600px;
+    // height: 300px;
+  }
+
   &__list{
     display: flex;
     gap: 40px;
+
+    @media (min-width: 980px) {
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 200px;
+        height: 425px;
+        background:  linear-gradient(270deg,rgb(255, 255, 255), transparent);
+      }
+    }
   }
 
   //не зміг прибрати 2-го райтера через nth-child -_-
@@ -889,22 +905,12 @@ ul{
     }
 
     &--hidden{
-      display: none;
+      display: flex;
 
       @media (min-width: 980px) {
-        display: flex;
+        // display: flex;
         overflow: hidden;
         width: 500px;
-
-        &:after {
-          content: '';
-          display: block;
-          position: absolute;
-          left: 140px;
-          width: 200px;
-          height: 100%;
-          background:  linear-gradient(270deg,rgb(255, 255, 255), transparent);
-        }
 
         .experts__online{
           display: none;

@@ -1,29 +1,31 @@
-import './style.scss';
-// console.log('Webpack starter with SCSS and dev server');
+// import Swiper from 'swiper';
 
-//SWIPER 
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
+import Swiper, { Navigation, Pagination } from 'swiper';
+// import './style.scss';
+
+// import Swiper from 'swiper/bundle';
+// import 'swiper/css/bundle';
+
+import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
 
+
+// const swiper = new Swiper();
 // const swiper = new Swiper('.swiper', {
-//   direction: 'vertical',
-//   loop: true,
-
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
+//   modules: [Navigation, Pagination]
 // });
+
+const swiper = new Swiper('.swiper', {
+
+  direction: 'horizontal',
+  // loop: true,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+
+});
 
 
 //BURGER
