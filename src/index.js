@@ -1,46 +1,38 @@
-// import Swiper from 'swiper';
-
 import Swiper, { Navigation, Pagination } from 'swiper';
-// import './style.scss';
+import './style.scss';
 
-// import Swiper from 'swiper/bundle';
-// import 'swiper/css/bundle';
+'use strict';
 
-import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
+document.addEventListener('DOMContentLoaded', ()=> {
 
+  const swiper = new Swiper('.swiper', {
+    modules: [Navigation, Pagination],
+    direction: 'horizontal',
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
 
-// const swiper = new Swiper();
-// const swiper = new Swiper('.swiper', {
-//   modules: [Navigation, Pagination]
-// });
-
-const swiper = new Swiper('.swiper', {
-
-  direction: 'horizontal',
-  // loop: true,
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
-
-});
+  });
 
 
 //BURGER
-const menuButton = document.querySelector(".burger");
-const menuShow = document.querySelector(".header__list");
+  const menuButton = document.querySelector(".burger");
+  const menuShow = document.querySelector(".header__list");
+  const body = document.querySelector("body");
+  const html = document.querySelector("html");
 
 //BURGER__MENU
-function toggleMenu(){
-  if (menuButton.classList.contains("open")){
-    menuButton.classList.remove('open');      //change to burger
-    menuShow.classList.remove('show');        //hide menu
-  } else {
-    menuButton.classList.add('open');         //change to "X"
-    menuShow.classList.add('show');           //show menu
+  function toggleMenu() {
+    menuButton.classList.toggle('open');      //change to burger
+    menuShow.classList.toggle('show');        //hide menu
+    html.classList.toggle('scroll-hidden');
+    body.classList.toggle('scroll-hidden');
   }
-}
 
-menuButton.addEventListener("click", toggleMenu);
+  if (menuButton) {
+    menuButton.addEventListener("click", toggleMenu);
+  }
+
+});
