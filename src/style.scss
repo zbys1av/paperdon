@@ -280,8 +280,7 @@ ul{
       padding-right: 35px;
 
       position: inherit;
-      transform: translateX(0);
-      margin-top: 0;
+      transform: translateY(0);
     }
 
     @media (min-width: 980px) {
@@ -290,19 +289,12 @@ ul{
   }
 
   .show{
-    transform: translateX(0px);
+    transform: translateY(66px);
 
     .header__item{
-      border: 1px solid rgba(211, 219, 231, 0.5);
-    }
-  }
-  
-  //якщо відкрити бургер і почати збільшувати розмір екрану, то бордери залишаються
-
-  .header__item{
-    display: flex;
-    flex-direction: column;
-    margin-left: -60px;
+      display: flex;
+      flex-direction: column;
+      margin-left: -60px;
 
     font-weight: 500;
     font-size: 16px;
@@ -310,11 +302,11 @@ ul{
     text-align: center;
     color: #475569;
 
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    gap: 10px;
-    // border: 1px solid rgba(255, 255, 255, 0.5);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 10px;
+      border: 1px solid rgba(211, 219, 231, 0.5);
 
     &:hover{
       background: #E1EDF8;

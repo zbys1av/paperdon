@@ -1,9 +1,17 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 import './style.scss';
 
-'use strict';       //check if code was written strictly to avoid any issues in different browsers
+// import Swiper from 'swiper/bundle';
+// import 'swiper/css/bundle';
 
-document.addEventListener('DOMContentLoaded', ()=> {    //js will run only when html loaded
+import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+
+
+// const swiper = new Swiper();
+// const swiper = new Swiper('.swiper', {
+//   modules: [Navigation, Pagination]
+// });
 
   const swiper = new Swiper('.swiper', {
     modules: [Navigation, Pagination],
@@ -24,33 +32,14 @@ document.addEventListener('DOMContentLoaded', ()=> {    //js will run only when 
   const html = document.querySelector("html");
 
 //BURGER__MENU
-  function toggleMenu() {
-    menuButton.classList.toggle('open');      //change to burger
-    menuShow.classList.toggle('show');        //hide menu
-    html.classList.toggle('scroll-hidden');   //disable scrolling page option
-    body.classList.toggle('scroll-hidden');   //disable scrolling page option
+function toggleMenu(){
+  if (menuButton.classList.contains("open")){
+    menuButton.classList.remove('open');      //change to burger
+    menuShow.classList.remove('show');        //hide menu
+  } else {
+    menuButton.classList.add('open');         //change to "X"
+    menuShow.classList.add('show');           //show menu
   }
-
-  if (menuButton) {         //check if element exists
-    menuButton.addEventListener("click", toggleMenu);
-  }
-
-});
-
-
-//FAQ
-const faq = document.querySelectorAll(".faq__card");
-const question = document.querySelectorAll(".faq__question");
-const plus = document.querySelectorAll(".plus");
-const answer = document.querySelectorAll(".faq__text");
-
-function showAnswer(){
-  faq.classList.toggle('selected-card-js');
-  question.classList.toggle('selected-question-js');
-  plus.classList.toggle('selected-question-js');
-  answer.classList.toggle('selected-text-js');
 }
 
-if (faq) {
-  faq.addEventListener("click", showAnswer);
-}
+menuButton.addEventListener("click", toggleMenu);
