@@ -6,11 +6,13 @@
   font-family: 'Rubik', sans-serif;
   transition: 0.3s;
 }
+
 html, body {
   &.scroll-hidden {
     overflow: hidden!important;
   }
 }
+
 html {
   margin: 0;
 }
@@ -296,17 +298,18 @@ ul{
       flex-direction: column;
       margin-left: -60px;
 
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    color: #475569;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: #475569;
 
       justify-content: center;
       align-items: center;
       padding: 20px;
       gap: 10px;
       border: 1px solid rgba(211, 219, 231, 0.5);
+    }
 
     &:hover{
       background: #E1EDF8;
@@ -358,6 +361,7 @@ ul{
     &:hover{
       color: #6DABDD;
     }
+
     @media (min-width: 580px) {
       display: none;
     }
@@ -883,6 +887,10 @@ ul{
   .swiper{
     // width: 600px;
     // height: 300px;
+  }
+
+  .swiper-pagination{
+    color: red;
   }
 
   &__list{
@@ -2122,19 +2130,17 @@ ul{
     // }
   }
 
-  .selected-card-js{
+  .crd-faq-js{
     flex-direction: column;
-    // height: 200px;
-    width: 800px;
-  }
+    // width: 800px;
+    
+    .faq__question{
+      color: #6AA6DA;
+    }
 
-  .selected-question-js{
-    color: #6AA6DA;
-  }
-
-  //works
-  .selected-text-js{
-    display: block;
+    .faq__text{
+      display: block;
+    }
   }
 }
 
@@ -2194,6 +2200,14 @@ ul{
       background: #93cbfc;
       border: 1px solid transparent;
     }
+  }
+
+  // &__text-add{
+  //   display: none;
+  // }
+
+  .hide-text{
+    display: none
   }
 }
 
@@ -2406,4 +2420,3 @@ ul{
     }
   }
 }
-
