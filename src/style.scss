@@ -171,9 +171,13 @@ ul{
   border-style: solid;
   border-color: rgba(211, 219, 231, 0.5);
   border-radius: 0px 25px 25px 0px;
+  transition: 0.3s;
 
   &:hover{
     cursor: pointer;
+    path {
+      stroke: #A788CE;
+    }
   }
 
   @media (min-width: 369px) {
@@ -268,6 +272,7 @@ ul{
     z-index: 99;
     background: #ffffff;
     color: white;
+    margin-top: 66px;
 
     @media (min-width: 920px) {
       display: flex;
@@ -278,7 +283,7 @@ ul{
       margin-top: 0px;
 
       position: inherit;
-      transform: translateY(0);
+      transform: translateX(0);
     }
 
     @media (min-width: 980px) {
@@ -286,26 +291,30 @@ ul{
     }
   }
 
-  .show{
-    transform: translateY(66px);
+  &__item{
+    display: flex;
+    flex-direction: column;
+    margin-left: -60px;
 
-    .header__item{
-      display: flex;
-      flex-direction: column;
-      margin-left: -60px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #475569;
 
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 150%;
-      text-align: center;
-      color: #475569;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    border: 1px solid rgba(211, 219, 231, 0.5);
 
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      gap: 10px;
-      border: 1px solid rgba(211, 219, 231, 0.5);
+    @media (min-width: 980px) {
+      border: none;
     }
+  }
+  .show{
+    transform: translateX(0);
+
 
     &:hover{
       background: #E1EDF8;
@@ -838,6 +847,47 @@ ul{
 }
 
 .experts {
+  position: relative;
+  overflow: hidden;
+  @media (min-width: 980px) {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 70px;
+      width: 200px;
+      height: 100%;
+      background:  linear-gradient(270deg,rgb(255, 255, 255), transparent);
+      top: 0;
+      z-index: 999;
+    }
+  }
+
+
+  .swiper {
+    overflow: inherit;
+
+
+
+  }
+
+  .swiper-pagination {
+    z-index: 20;
+    .swiper-pagination-bullet {
+      background: red;
+    }
+  }
+
+
+
+  &__navigation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+
+
 
   &__box{
     padding-top: 60px;
@@ -880,30 +930,11 @@ ul{
     }
   }
 
-  .swiper{
-    // width: 600px;
-    // height: 300px;
-  }
-
-  .swiper-pagination{
-    color: red;
-  }
-
   &__list{
     display: flex;
     gap: 40px;
 
-    @media (min-width: 980px) {
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        right: 0;
-        width: 200px;
-        height: 425px;
-        background:  linear-gradient(270deg,rgb(255, 255, 255), transparent);
-      }
-    }
+
   }
 
   &__card {
@@ -911,25 +942,13 @@ ul{
     flex-direction: column;
     padding: 25px 30px;
     position: relative;
-
+    width: 500px;
 
     @media (min-width: 580px) {
       flex-direction: row;
     }
 
-    &--hidden{
-      display: flex;
 
-      @media (min-width: 980px) {
-        // display: flex;
-        overflow: hidden;
-        width: 500px;
-
-        .experts__online{
-          display: none;
-        }
-      }
-    }
   }
 
   &__profile{
@@ -965,6 +984,7 @@ ul{
     text-align: center;
     color: #1D293F;
     margin-bottom: 30px;
+    user-select: none;
   }
 
   &__writer-section {
@@ -2185,6 +2205,12 @@ ul{
     font-size: 18px;
     line-height: 165%;
     color: #1D293F;
+    max-height: 150px;
+    overflow: hidden;
+    transition: 0.6s;
+    &.show-text {
+      max-height: 2000px;
+    }
   }
 
   &__button {
